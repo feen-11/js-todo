@@ -10,4 +10,8 @@ export class TodoItemModel {
     this.title = title;
     this.completed = completed;
   }
+
+  updateTitle(newTitle) {
+    this.title = newTitle;
+  }
 }
