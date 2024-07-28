@@ -13,10 +13,6 @@ export function htmlToElement(html) {
   return template.content.firstElementChild;
 }
 
-/**
- * HTML文字列からDOM Nodeを作成して返すタグ関数
- * @return {Element}
- */
 export function element(strings, ...values) {
   const htmlString = strings.reduce((result, str, i) => {
     const value = values[i - 1];
@@ -29,14 +25,7 @@ export function element(strings, ...values) {
   return htmlToElement(htmlString);
 }
 
-/**
- * コンテナ要素の中身をbodyElementで上書きする
- * @param {Element} bodyElement コンテナ要素の中身となる要素
- * @param {Element} containerElement コンテナ要素
- */
 export function render(bodyElement, containerElement) {
-  // containerElementの中身を空にする
   containerElement.innerHTML = '';
-  // containerElementの直下にbodyElementを追加する
   containerElement.appendChild(bodyElement);
 }
